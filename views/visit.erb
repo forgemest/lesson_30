@@ -1,0 +1,53 @@
+<html>
+
+<head>
+ <!-- <title>Barber</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+</head>
+
+<body>
+
+<h2>Записаться</h2>
+<p>На этой странице вы сможете записаться к нам на сианс</p>
+
+<form action="/visit" method="POST">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ваше имя</label>
+    <input name="client[name]" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваше имя" value="<%= @c.name %>">
+   
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ваш телефон</label>
+    <input name="client[phone]" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваше телефон" value="<%= @c.phone %>">
+   
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Когда вас ждать</label>
+    <input name="client[datestamp]" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите дату и время" value="<%= @c.datestamp %>" >
+   
+  </div>
+
+<select name="client[barber]" class="form-select" aria-label="Default select example">
+  <option selected>Выбирите парикмахера</option>
+  <option value="Valiy">Валя</option>
+  <option value="Galiy">Галя</option>
+  <option value="Dima">Дмитрий</option>
+  
+</select>
+<br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
