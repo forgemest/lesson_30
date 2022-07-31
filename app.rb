@@ -14,10 +14,6 @@ end
 class Barber < ActiveRecord::Base
 end
 
-# before do
-#   @barbers = barber.all
-# end
-
 
 get '/' do
  @barbers = Barber.all
@@ -25,13 +21,14 @@ get '/' do
 end
 
 
-# get '/' do 
-#   erb :home
-# end
+get '/barber/:id' do
+@barber = Barber.find(params[:id]) 
+  erb :barber 
+end
 
-# get '/index' do 
-# 	erb :index
-# end
+
+
+
 
 get '/visit' do
   @c = Client.new
@@ -53,10 +50,6 @@ erb :visit
 
 get '/contacts' do
 	erb :contacts
-end
-
-get '/barber/:id' do 
-  erb "this is gonna be barber page" 
 end
 
 
